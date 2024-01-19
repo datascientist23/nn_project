@@ -44,7 +44,7 @@ if selected_model == "предсказание 1":
                3: 'якобы горы', 4: 'кажется это море', 5: 'вроде улица'}
     model_1 = model
     model_1.fc = nn.Linear(2048, 6, bias=True)
-    model_1.load_state_dict(torch.load('/Users/id/Documents/strlit/08_05_strlit/resnet50_model.pt', map_location=device))
+    model_1.load_state_dict(torch.load('resnet50_model.pt', map_location=device))
     model_1.to(device)
     model_1.eval()
 
@@ -80,7 +80,7 @@ elif selected_model == "предсказание 2":
     labels2 = {0: 'доброкачественная пупырка', 1: 'злокачественная штучка'}
 
     model_2.fc = nn.Linear(2048, 1, bias=True)
-    model_2.load_state_dict(torch.load('/Users/id/Documents/strlit/08_05_strlit/resnext50_trained.pt', map_location=device))
+    model_2.load_state_dict(torch.load('resnext50_trained.pt', map_location=device))
     model_2.to(device)
     model_2.eval()
 
